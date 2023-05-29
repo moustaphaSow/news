@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteCond "%{REQUEST_URI}" "article"
+RewriteRule "article/([0-9]+)" "index.php?action=article&id=$1"
+RewriteCond "%{REQUEST_URI}" "categorie"
+RewriteRule "categorie/([0-9]+)" "index.php?action=categorie&id=$1"
+RewriteCond "%{REQUEST_URI}" "assets"
+RewriteRule "assets/([0-9]+)" "assets/$1"
+RewriteCond "%{REQUEST_URI}" "!index.php"
+RewriteRule "assets/([0-9]+)" "index\.php" [R]
